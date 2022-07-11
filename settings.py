@@ -14,7 +14,7 @@ class Settings:
 
         #子弹设置
         self.bullet_speed = 3
-        self.bullet_width = 200
+        self.bullet_width = 600
         self.bullet_height = 15
         self.bullet_color = (0, 0, 0)
         self.bullet_allowed = 3
@@ -24,6 +24,9 @@ class Settings:
         self.fleet_drop_speed = 10
         #fleet_direction为1表示向右移，为-1表示向左移
         self.fleet_direction = 1
+        self.alien_points = 50
+        #外星人分数的提高速度
+        self.score_scale = 1.5
 
         #加快游戏节奏的速度
         self.speedup_scale = 2
@@ -44,3 +47,5 @@ class Settings:
         self.ship_speed *= self.speedup_scale
         self.bullet_speed *= self.speedup_scale
         self.alien_speed *= self.speedup_scale
+
+        self.alien_points = int(self.alien_points * self.score_scale)
